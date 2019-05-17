@@ -578,7 +578,7 @@
 						<form action="#" class="form">
 							<div class="row-input">
 								<input type="text" id="input-email" aria-haspopup="true" role="textbox">
-								<button type="submit" class="btn btn-submit">submit</button>
+								<button type="submit" class="btn btn-submit" id="submit">submit</button>
 							</div>
 							<div class="row-checkbox">
 								<label for="subscribe">
@@ -911,7 +911,7 @@
 			function emailStep() {
 				updateTimer();
 
-				$('input[type=text]').keyboard({
+				$('#input-email').keyboard({
 					display: {
 						'bksp': '\u2190',
 						'accept': 'Enter',
@@ -956,7 +956,9 @@
 
 				let email = $('*[id*=screen-' + currentSection + ']').find('input[type=text]');
 
-				$("button[type=submit]").on('click', function(){
+				$("#submit").on('click', function(e){
+					e.preventDefault();
+					
 					if (validateEmail(email)) {
 						$('*[id*=screen-' + currentSection + ']').hide();
 						currentSection++;
