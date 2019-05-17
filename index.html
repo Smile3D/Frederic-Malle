@@ -278,6 +278,10 @@
 		outline: none;
 	}
 
+/*	input::-webkit-input-placeholder {color:#a9a9a9;}
+	input::-moz-placeholder          {color:#a9a9a9;}
+	input:-moz-placeholder           {color:#a9a9a9;}
+	input:-ms-input-placeholder      {color:#a9a9a9;}*/
 	.steps {
 		padding: 0;
 		margin: 0;
@@ -469,11 +473,51 @@
 		background-image: url(../images/check.png);
 	}
 
+	.ui-keyboard-input-current {
+		box-shadow: none;
+	}
+
+	.ui-widget-content {
+		background: transparent;
+		border: 1px solid #a9a9a9;
+	}
+
+	.ui-corner-all,
+	.ui-corner-top,
+	.ui-corner-left,
+	.ui-corner-tl {
+		border-radius: 0;
+	}
+
+	.ui-widget.ui-widget-content {
+		background: #a9a9a9;
+		border: 1px solid #a9a9a9;
+	}
+
+	.ui-keyboard {
+	    font-size: 30px;
+	    text-align: center;
+	    background: rgba(0, 0, 0, .8);
+	    width: 100%;
+	    height: auto;
+	    left: 0;
+	    top: auto;
+	    bottom: 0px;
+	    position: fixed;
+	    white-space: nowrap;
+	    overflow-x: auto;
+	    padding-bottom: 20px;
+	}
+
+	.ui-state-hover {
+
+	}
+
 </style>
 <body>
 	<div class="wrapper">
 		<main class="main">
-			<!-- <div id="screen-1" data-screen="start" class="fullscreen background-start">
+			<div id="screen-1" data-screen="start" class="fullscreen background-start">
 				<div class="text-start-holder">
 					<div class="text-start">
 						Your Personal<br>Fragrance Finder
@@ -483,7 +527,7 @@
 						<a href="#" class="btn" id="btn-start">let's get started</a>
 					</div>
 				</div>
-			</div> -->
+			</div>
 			<div id="screen-2" data-screen="question-2" class="fullscreen">
 				<header class="header">
 					<div class="header-holder">
@@ -834,40 +878,42 @@
 			function emailStep() {
 				let email = $('*[id*=screen-' + currentSection + ']').find('input[type=email]');
 
-				$('input[type=email]').keyboard({
+				$('input[type=text]').keyboard({
 					display: {
-						'bksp': "\u2190",
+						'bksp': '\u2190',
 						'accept': 'Enter',
 						'default': 'ABC',
 						'meta1': '.?123',
 						'meta2': '#+=',
-						's': "\u2191"
+						'com': ".com",
+						's': "\u21e7"
 					},
+					maxLength: 70,
 					layout: 'custom',
 					customLayout: {
 						'default': [
 							'q w e r t y u i o p {bksp}',
 							'a s d f g h j k l',
-							'{s} z x c v b n m , . {s}',
-							'{meta1} {space} {meta1}'
+							'{s} z x c v b n m @ . .com',
+							'{meta1} _ - @gmail.com @yahoo.com @hotmail.com'
 						],
 						'shift': [
 							'Q W E R T Y U I O P {bksp}',
 							'A S D F G H J K L',
-							'{s} Z X C V B N M ! ? {s}',
-							'{meta1} {space} {meta1}'
+							'{s} Z X C V B N M @ . .com',
+							'{meta1} _ - @gmail.com @yahoo.com @hotmail.com'
 						],
 						'meta1': [
 							'1 2 3 4 5 6 7 8 9 0 {bksp}',
-							'- / : ; ( ) \u20ac & @',
-							'{meta2} . , ? ! \' " {meta2}',
-							'{default} {space} {default}'
+							'` | { } % ^ * / \'',
+							'{meta2} $ & ~ # = + . {meta2}',
+							'{default} {space} ! ? {default}'
 						],
 						'meta2': [
-							'[ ] { } # % ^ * + = {bksp}',
-							'_ \\ | ~ < > $ \u00a3 \u00a5',
-							'{meta1} . , ? ! \' " {meta1}',
-							'{default} {space} {default}'
+							'[ ] { } \u2039 \u203a ^ * " , {bksp}',
+							'\\ | / < > $ \u00a3 \u00a5 \u2022',
+							'{meta1} \u20ac & ~ # = + . {meta1}',
+							'{default} {space} ! ? {default}'
 						]
 					},
 					usePreview: false,
