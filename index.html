@@ -881,12 +881,16 @@
 	<script>
 		(function( $ ) {
 			var startBtn = $('#btn-start');
+			var startOverButton = $('.start-over-button');
 			var allSections = $('*[id*=screen-]');
-			console.log(allSections);
 			var currentSection = 1;
 			var answersArr = [];
+			var resetTimer;
+			var DEFAULT_TIMEOUT = 60000 * 2;
 
 			function startGame(){
+				updateTimer();
+
 				$('[data-screen="start"]').hide();
 				currentSection++;
 
@@ -894,6 +898,8 @@
 			}
 
 			function emailStep() {
+				updateTimer();
+
 				let email = $('*[id*=screen-' + currentSection + ']').find('input[type=email]');
 
 				$('input[type=text]').keyboard({
@@ -954,6 +960,8 @@
 			}
 
 			function imageQuizz () {
+				updateTimer();
+
 				let quetstionImages = $('*[id*=screen-' + currentSection + ']').find('.question-images');
 
 				if ( currentSection !== allSections.length) {
@@ -969,8 +977,28 @@
 				}
 			}
 
+			function resetUI() {
+				location.reload();
+				answersArr = [];
+			}
+
+			function timerCallback() {
+				if (currentSection > 1) {
+					resetUI();
+				}
+			}
+
+			function updateTimer() {
+				clearTimeout(resetTimer);
+				resetTimer = setTimeout(function () { timerCallback(); }, DEFAULT_TIMEOUT);
+			}
+
 			startBtn.on('click', function(){
 				startGame();
+			});
+
+			startOverButton.on('click', function(){
+				resetUI();
 			});
 		})(jQuery);
 	</script>
