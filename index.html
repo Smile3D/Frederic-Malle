@@ -34,11 +34,11 @@
 	}
 
 	button,
-	html input[type="button"], /* 1 */
+	html input[type="button"],
 	input[type="reset"],
 	input[type="submit"] {
-		-webkit-appearance: button; /* 2 */
-		cursor: pointer; /* 3 */
+		-webkit-appearance: button;
+		cursor: pointer;
 	}
 
 	button::-moz-focus-inner,
@@ -473,7 +473,7 @@
 <body>
 	<div class="wrapper">
 		<main class="main">
-			<div id="screen-1" data-screen="start" class="fullscreen background-start">
+			<!-- <div id="screen-1" data-screen="start" class="fullscreen background-start">
 				<div class="text-start-holder">
 					<div class="text-start">
 						Your Personal<br>Fragrance Finder
@@ -483,7 +483,7 @@
 						<a href="#" class="btn">let's get started</a>
 					</div>
 				</div>
-			</div>
+			</div> -->
 			<div id="screen-2" data-screen="question-2" class="fullscreen">
 				<header class="header">
 					<div class="header-holder">
@@ -504,7 +504,7 @@
 					<div class="response-container">
 						<form action="#" class="form">
 							<div class="row-input">
-								<input type="email">
+								<input type="text" id="input-email" aria-haspopup="true" role="textbox">
 								<button type="submit" class="btn btn-submit">submit</button>
 							</div>
 							<div class="row-checkbox">
