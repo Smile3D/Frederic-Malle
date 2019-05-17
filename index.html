@@ -900,8 +900,6 @@
 			var DEFAULT_TIMEOUT = 60000 * 2;
 
 			function startGame(){
-				updateTimer();
-
 				$('[data-screen="start"]').hide();
 				currentSection++;
 
@@ -958,7 +956,7 @@
 
 				$("#submit").on('click', function(e){
 					e.preventDefault();
-					
+
 					if (validateEmail(email)) {
 						$('*[id*=screen-' + currentSection + ']').hide();
 						currentSection++;
