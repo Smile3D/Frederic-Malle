@@ -226,68 +226,170 @@
 		line-height: 109px;
 	}
 
-	#screen-2 .question-container {
-		max-width: 1600px;
+	.btn-submit {
+		border: none;
+		min-width: 383px;
+		min-height: 107px;
+		line-height: 105px;
+		outline: none;
 	}
 
-	#screen-2 .question-img {
-		width: 23%;
+	.form {
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+    	align-items: center;
+	}
+
+	.row-input {
+		display: flex;
+	    width: 100%;
+	    justify-content: center;
+	    margin: 0 0 41px;
+	}
+
+	input {
+		width: 100%;
+		height: 107px;
+		border: 1px solid #a9a9a9;
+		font-size: 30px;
+		padding: 20px;
+		max-width: 808px;
+	    width: 100%;
+	    outline: none;
+	    margin-right: 35px;
+	}
+
+	input:focus {
+		outline: none;
 	}
 
 	#screen-2 .question-container {
-		max-width: 1600px;
+		padding: 231px 15px 0 15px;
+	}
+
+	#screen-2 .question-text {
+		text-transform: none;
+		font-size: 63px;
+		margin: 0 0 63px;
 	}
 
 	#screen-3 .question-container {
+		max-width: 1600px;
+	}
+
+	#screen-3 .question-img {
+		width: 23%;
+	}
+
+	#screen-3 .question-container {
+		max-width: 1600px;
+	}
+
+	#screen-4 .question-container {
 		max-width: 1338px;
 		padding: 172px 15px 0 15px;
 	}
 
-	#screen-4 .question-container {
+	#screen-5 .question-container {
 		max-width: 1790px;
 	}
 
-	#screen-5 .question-container {
+	#screen-6 .question-container {
 		max-width: 1034px;
 		padding: 120px 15px 0 15px;
 	}
 
-	#screen-5 .question-text {
+	#screen-6 .question-text {
 		margin: 0 0 59px;
 	}
 
-	#screen-5 .question-images {
+	#screen-6 .question-images {
 		flex-wrap: wrap;
 	}
 
-	#screen-5 .question-img {
+	#screen-6 .question-img {
 		margin: 0 0 43px;
 	}
 
-	#screen-5 .question-img img {
+	#screen-6 .question-img img {
 		margin: 0 0 6px;
 	}
 
-	#screen-5 .question-text-figurecaption {
+	#screen-6 .question-text-figurecaption {
 		font-size: 30px;
 	}
 
-	#screen-6 .question-container {
+	#screen-7 .question-container {
+		max-width: 1380px;
+		padding: 120px 15px 0 15px;
+	}
+
+	#screen-7 .question-images {
+		flex-wrap: wrap;
+	}
+
+	#screen-7 .question-img {
+		margin: 0 0 41px;
+	}
+
+	#screen-7 .question-img img {
+		margin: 0 0 10px;
+	}
+
+	#screen-7 .question-text-figurecaption {
+		font-size: 30px;
+	}
+
+	#screen-7 .question-text {
+		margin: 0 0 54px;
+	}
+
+	#screen-8 .question-container {
 		padding: 336px 15px 0 15px;
 	}
 
-	#screen-6 .question-text {
+	#screen-8 .question-text {
 		font-size: 92px;
 	}
 
-	#screen-6 .question-text {
+	#screen-8 .question-text {
 		font-size: 92px;
 		background-color: #eb3301;
 		margin: 0 -15px 0;
 		padding: 95px 0;
 		font-weight: 400;
-
 	}
+
+	.row-checkbox label {
+		font-size: 30px;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		align-items: center;
+	}
+
+	.row-checkbox label input[type='checkbox'] {
+		width: 45px;
+		height: 45px;
+		background-color: transparent;
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+		-webkit-appearance: none;
+		border: 1px solid #a9a9a9;
+		margin-right: 25px;
+	}
+
+	.row-checkbox label input[type='checkbox']:checked {
+		background-image: url(../images/check.png);
+	}
+
 </style>
 <body>
 	<div class="wrapper">
@@ -302,8 +404,34 @@
 						<a href="#" class="btn">let's get started</a>
 					</div>
 				</div>
+			</div> -->
+			<div id="screen-2" data-screen="question-2" class="fullscreen">
+				<header class="header">
+					<img src="images/logo.png" srcset="images/logo-2x.png 2x" alt="EDITIONS PARFUMS FREDERIC MALLE">
+				</header>
+				<button class="start-over-button">Start Over</button>
+				<div class="question-container">
+					<span class="question-text fg-color-grey">Enter your email to receive your free sample</span>
+					<div class="response-container">
+						<form action="#" class="form">
+							<div class="row-input">
+								<input type="email">
+								<button type="submit" class="btn btn-submit">submit</button>
+							</div>
+							<div class="row-checkbox">
+								<label for="subscribe">
+									<input type="checkbox" id="subscribe"> Yes, I would like to receive information, samples, and offers.
+								</label>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="hidden-data" data-question="Enter your email to receive your free sample">
+					<input type="checkbox" id="data-q1-yes" value="Yes">
+					<input type="checkbox" id="data-q1-no" value="No">
+				</div>
 			</div>
-			<div id="screen-2" data-screen="question-1" class="fullscreen">
+			<!-- <div id="screen-3" data-screen="question-3" class="fullscreen">
 				<header class="header">
 					<img src="images/logo.png" srcset="images/logo-2x.png 2x" alt="EDITIONS PARFUMS FREDERIC MALLE">
 				</header>
@@ -343,8 +471,8 @@
 					<input type="checkbox" id="data-q1-yes" value="Yes">
 					<input type="checkbox" id="data-q1-no" value="No">
 				</div>
-			</div>
-			<div id="screen-3" data-screen="question-2" class="fullscreen">
+			</div> -->
+			<!-- <div id="screen-4" data-screen="question-4" class="fullscreen">
 				<header class="header">
 					<img src="images/logo.png" srcset="images/logo-2x.png 2x" alt="EDITIONS PARFUMS FREDERIC MALLE">
 				</header>
@@ -378,8 +506,8 @@
 					<input type="checkbox" id="data-q1-yes" value="Yes">
 					<input type="checkbox" id="data-q1-no" value="No">
 				</div>
-			</div>
-			<div id="screen-4" data-screen="question-3" class="fullscreen">
+			</div> -->
+			<!-- <div id="screen-5" data-screen="question-5" class="fullscreen">
 				<header class="header">
 					<img src="images/logo.png" srcset="images/logo-2x.png 2x" alt="EDITIONS PARFUMS FREDERIC MALLE">
 				</header>
@@ -419,8 +547,8 @@
 					<input type="checkbox" id="data-q1-yes" value="Yes">
 					<input type="checkbox" id="data-q1-no" value="No">
 				</div>
-			</div>
-			<div id="screen-5" data-screen="question-4" class="fullscreen">
+			</div> -->
+			<!-- <div id="screen-6" data-screen="question-6" class="fullscreen">
 				<header class="header">
 					<img src="images/logo.png" srcset="images/logo-2x.png 2x" alt="EDITIONS PARFUMS FREDERIC MALLE">
 				</header>
@@ -473,7 +601,72 @@
 					<input type="checkbox" id="data-q1-no" value="No">
 				</div>
 			</div> -->
-			<div id="screen-6" data-screen="question-5" class="fullscreen background-end">
+			<!-- <div id="screen-7" data-screen="question-7" class="fullscreen">
+				<header class="header">
+					<img src="images/logo.png" srcset="images/logo-2x.png 2x" alt="EDITIONS PARFUMS FREDERIC MALLE">
+				</header>
+				<button class="start-over-button">Start Over</button>
+				<div class="question-container">
+					<span class="question-text fg-color-grey">What is your favorite drink?</span>
+					<div class="response-container">
+						<div class="question-images">
+							<a href="#" class="question-img">
+								<img src="images/img-17.jpg" srcset="images/img-17-2x.jpg 2x" alt="">
+								<span class="question-text-figurecaption">
+									Cocktail
+								</span>
+							</a>
+							<a href="#" class="question-img">
+								<img src="images/img-18.jpg" srcset="images/img-18-2x.jpg 2x" alt="">
+								<span class="question-text-figurecaption">
+									Coffee
+								</span>
+							</a>
+							<a href="#" class="question-img">
+								<img src="images/img-19.jpg" srcset="images/img-19-2x.jpg 2x" alt="">
+								<span class="question-text-figurecaption">
+									Milk Shake
+								</span>
+							</a>
+							<a href="#" class="question-img">
+								<img src="images/img-20.jpg" srcset="images/img-20-2x.jpg 2x" alt="">
+								<span class="question-text-figurecaption">
+									Smoothie
+								</span>
+							</a>
+							<a href="#" class="question-img">
+								<img src="images/img-21.jpg" srcset="images/img-21-2x.jpg 2x" alt="">
+								<span class="question-text-figurecaption">
+									Tea
+								</span>
+							</a>
+							<a href="#" class="question-img">
+								<img src="images/img-22.jpg" srcset="images/img-22-2x.jpg 2x" alt="">
+								<span class="question-text-figurecaption">
+									Water
+								</span>
+							</a>
+							<a href="#" class="question-img">
+								<img src="images/img-23.jpg" srcset="images/img-23-2x.jpg 2x" alt="">
+								<span class="question-text-figurecaption">
+									Wine
+								</span>
+							</a>
+							<a href="#" class="question-img">
+								<img src="images/img-23.jpg" srcset="images/img-23-2x.jpg 2x" alt="">
+								<span class="question-text-figurecaption">
+									Whiskey
+								</span>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="hidden-data" data-question="What is your favorite drink?">
+					<input type="checkbox" id="data-q1-yes" value="Yes">
+					<input type="checkbox" id="data-q1-no" value="No">
+				</div>
+			</div> -->
+			<!-- <div id="screen-8" data-screen="question-8" class="fullscreen background-end">
 				<header class="header">
 					<img src="images/logo.png" srcset="images/logo-2x.png 2x" alt="EDITIONS PARFUMS FREDERIC MALLE">
 				</header>
@@ -481,7 +674,7 @@
 				<div class="question-container">
 					<span class="question-text fg-color-white">Share your <i>#perfectscent</i><br> on Instagram <strong>@fredericmalle</strong></span>
 				</div>
-			</div>
+			</div> -->
 		</main>
 	</div>
 	<script src="js/jquery-3.3.1.min.js"></script>

@@ -71,8 +71,7 @@ gulp.task('browser-sync', function() {
 
 gulp.task('build', ['clean','img', 'styles'], function() {
 	var buildCSS = gulp.src([
-		'css/main.css',
-		'css/libs.min.css'
+		'css/main.css'
 	])
 		.pipe(cssbeautify())
  		.pipe(gcmq())
@@ -113,7 +112,7 @@ gulp.task('img', function() {
 //     .pipe(gulp.dest('dist/css'));
 // });
 
-gulp.task('watch', ['browser-sync', 'styles', 'css-libs', 'scripts'] , function() {
+gulp.task('watch', ['browser-sync', 'styles'] , function() {
 	gulp.watch(''+syntax+'/**/*.'+syntax+'', ['styles']);
 	gulp.watch('*.html', browserSync.reload);
 	gulp.watch('**/*.css', browserSync.reload);
