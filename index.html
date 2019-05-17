@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>EDITIONS PARFUMS FREDERIC MALLE</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,500i,900" rel="stylesheet">
+	<link media="all" rel="stylesheet" href="css/jquery-ui.min.css">
+	<link media="all" rel="stylesheet" href="css/keyboard.min.css">
+	<link media="all" rel="stylesheet" href="css/sweetalert2.min.css">
+</head>
+<style type="text/css">
+	html {
+		box-sizing: border-box;
+		font-family: sans-serif;
+		-ms-text-size-adjust: 100%;
+		-webkit-text-size-adjust: 100%;
+	}
+
+	*, *:before, *:after {
+		box-sizing: inherit;
+	}
+
+	img {
+		max-width: 100%;
+		height: auto;
+		vertical-align: top;
+		border: 0;
+	}
+
+	button,
+	select {
+		text-transform: none;
+	}
+
+	button,
+	html input[type="button"], /* 1 */
+	input[type="reset"],
+	input[type="submit"] {
+		-webkit-appearance: button; /* 2 */
+		cursor: pointer; /* 3 */
+	}
+
+	button::-moz-focus-inner,
+	input::-moz-focus-inner {
+		border: 0;
+		padding: 0;
+	}
+
+	input {
+		line-height: normal;
+	}
+
+	input[type="checkbox"],
+	input[type="radio"] {
+		box-sizing: border-box; /* 1 */
+		padding: 0; /* 2 */
+	}
+
+	input[type="search"] {
+		-webkit-appearance: textfield; /* 1 */
+		box-sizing: content-box; /* 2 */
+	}
+
+	input[type="search"]::-webkit-search-cancel-button,
+	input[type="search"]::-webkit-search-decoration {
+		-webkit-appearance: none;
+	}
+
+	form,
+	fieldset {
+		margin: 0;
+		padding: 0;
+		border-style: none;
+	}
+
+	button,
+	input[type='button'],
+	input[type='reset'],
+	input[type='file'],
+	input[type='submit'] {
+		-webkit-appearance: none;
+		-webkit-border-radius: 0;
+		cursor: pointer;
+	}
+
+	body {
+		margin: 0;
+		overflow: hidden;
+		font-family: 'Roboto', sans-serif;
+	}
+
+	.header {
+		min-height: 71px;
+		background-color: #000;
+		padding: 11px 35px 0 35px;
+	}
+
+	/***** FULL HD SCREEN SIZE *****/
+	.fullscreen {
+		width: 1920px;
+		height: 1080px;
+	}
+
+	.hidden-data {
+    	visibility: collapse;
+	}
+
+	.start-over-button {
+		z-index: 2;
+		position: fixed;
+		right: 10px;
+		top: 10px;
+		background: #2C4170;
+		color: white;
+		font-size: 20px;
+		padding: 10px;
+		border: 0;
+		outline: none;
+		font-family: 'Roboto', sans-serif;
+	}
+
+	.question-text {
+		text-transform: uppercase;
+		font-size: 50px;
+		font-weight: 300;
+		text-align: center;
+		display: block;
+		margin: 0 0 73px;
+	}
+
+	.fg-color-grey {
+		color: #282827;
+	}
+
+	.fg-color-white {
+		color: #fff;
+	}
+
+	.question-container {
+		padding: 202px 15px 0 15px;
+		margin: 0 auto;
+		width: 100%;
+	}
+
+	.question-container .question-img:hover .question-text-figurecaption {
+		color: #de2f00;
+	}
+
+	.question-images {
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		justify-content: space-between;
+    	align-items: center;
+	}
+
+	.question-img {
+		text-decoration: none;
+		text-align: center;
+	}
+
+	.question-img img {
+		margin: 0 0 22px;
+	}
+
+	.question-text-figurecaption {
+		font-size: 35px;
+		text-transform: uppercase;
+		font-weight: 400;
+		letter-spacing: .6px;
+		color: #282827;
+		text-align: center;
+		display: block;
+	}
+
+	/***** BACKGROUNDS *****/
+	.background-start {
+		background: url(images/bg-start.jpg) no-repeat center center fixed;
+		background-size: 100% 100%;
+	}
+
+	.background-end {
+		background: url(images/bg-last-page.jpg) no-repeat center center fixed;
+		background-size: 100% 100%;
+	}
+
+	.text-start-holder {
+		height: 100%;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+	}
+
+	.text-start {
+		font-size: 70px;
+		text-transform: uppercase;
+		color: #fff;
+		margin: 17px 131px 55px 0;
+	}
+
+	.small-text {
+		font-size: 43px;
+		display: block;
+		margin: 36px 0 75px;
+	}
+
+	.btn {
+		min-width: 410px;
+		min-height: 114px;
+		color: #fff;
+		text-transform: uppercase;
+		display: inline-block;
+		background-color: #000;
+		font-size: 35px;
+		text-decoration: none;
+		font-weight: 600;
+		text-align: center;
+		letter-spacing: 1px;
+		line-height: 109px;
+	}
+
+	#screen-2 .question-container {
+		max-width: 1600px;
+	}
+
+	#screen-2 .question-img {
+		width: 23%;
+	}
+
+	#screen-2 .question-container {
+		max-width: 1600px;
+	}
+
+	#screen-3 .question-container {
+		max-width: 1338px;
+		padding: 172px 15px 0 15px;
+	}
+
+	#screen-4 .question-container {
+		max-width: 1790px;
+	}
+
+	#screen-5 .question-container {
+		max-width: 1034px;
+		padding: 120px 15px 0 15px;
+	}
+
+	#screen-5 .question-text {
+		margin: 0 0 59px;
+	}
+
+	#screen-5 .question-images {
+		flex-wrap: wrap;
+	}
+
+	#screen-5 .question-img {
+		margin: 0 0 43px;
+	}
+
+	#screen-5 .question-img img {
+		margin: 0 0 6px;
+	}
+
+	#screen-5 .question-text-figurecaption {
+		font-size: 30px;
+	}
+
+	#screen-6 .question-container {
+		padding: 336px 15px 0 15px;
+	}
+
+	#screen-6 .question-text {
+		font-size: 92px;
+	}
+
+	#screen-6 .question-text {
+		font-size: 92px;
+		background-color: #eb3301;
+		margin: 0 -15px 0;
+		padding: 95px 0;
+		font-weight: 400;
+
+	}
+</style>
+<body>
+	<div class="wrapper">
+		<main class="main">
+			<!-- <div id="screen-1" data-screen="start" class="fullscreen background-start">
+				<div class="text-start-holder">
+					<div class="text-start">
+						Your Personal<br>Fragrance Finder
+						<span class="small-text">
+							Find the scent that suits your senses
+						</span>
+						<a href="#" class="btn">let's get started</a>
+					</div>
+				</div>
+			</div>
+			<div id="screen-2" data-screen="question-1" class="fullscreen">
+				<header class="header">
+					<img src="images/logo.png" srcset="images/logo-2x.png 2x" alt="EDITIONS PARFUMS FREDERIC MALLE">
+				</header>
+				<button class="start-over-button">Start Over</button>
+				<div class="question-container">
+					<span class="question-text fg-color-grey">Where would you rather be?</span>
+					<div class="response-container">
+						<div class="question-images">
+							<a href="#" class="question-img">
+								<img src="images/img-01.jpg" srcset="images/img-01-2x.jpg 2x" alt="">
+								<span class="question-text-figurecaption">
+									flower garden
+								</span>
+							</a>
+							<a href="#" class="question-img">
+								<img src="images/img-02.jpg" srcset="images/img-02-2x.jpg 2x" alt="">
+								<span class="question-text-figurecaption">
+									sea shore
+								</span>
+							</a>
+							<a href="#" class="question-img">
+								<img src="images/img-03.jpg" srcset="images/img-03-2x.jpg 2x" alt="">
+								<span class="question-text-figurecaption">
+									orange grove
+								</span>
+							</a>
+							<a href="#" class="question-img">
+								<img src="images/img-04.jpg" srcset="images/img-04-2x.jpg 2x" alt="">
+								<span class="question-text-figurecaption">
+									private library
+								</span>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="hidden-data" data-question="Where would you rather be?">
+					<input type="checkbox" id="data-q1-yes" value="Yes">
+					<input type="checkbox" id="data-q1-no" value="No">
+				</div>
+			</div>
+			<div id="screen-3" data-screen="question-2" class="fullscreen">
+				<header class="header">
+					<img src="images/logo.png" srcset="images/logo-2x.png 2x" alt="EDITIONS PARFUMS FREDERIC MALLE">
+				</header>
+				<button class="start-over-button">Start Over</button>
+				<div class="question-container">
+					<span class="question-text fg-color-grey">If you are in an elevator,<br>who do you want to notice your scent?</span>
+					<div class="response-container">
+						<div class="question-images">
+							<a href="#" class="question-img">
+								<img src="images/img-05.jpg" srcset="images/img-05-2x.jpg 2x" alt="">
+								<span class="question-text-figurecaption">
+									just you
+								</span>
+							</a>
+							<a href="#" class="question-img">
+								<img src="images/img-06.jpg" srcset="images/img-06-2x.jpg 2x" alt="">
+								<span class="question-text-figurecaption">
+									the persone next to you
+								</span>
+							</a>
+							<a href="#" class="question-img">
+								<img src="images/img-07.jpg" srcset="images/img-07-2x.jpg 2x" alt="">
+								<span class="question-text-figurecaption">
+									everyone
+								</span>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="hidden-data" data-question="Where would you rather be?">
+					<input type="checkbox" id="data-q1-yes" value="Yes">
+					<input type="checkbox" id="data-q1-no" value="No">
+				</div>
+			</div>
+			<div id="screen-4" data-screen="question-3" class="fullscreen">
+				<header class="header">
+					<img src="images/logo.png" srcset="images/logo-2x.png 2x" alt="EDITIONS PARFUMS FREDERIC MALLE">
+				</header>
+				<button class="start-over-button">Start Over</button>
+				<div class="question-container">
+					<span class="question-text fg-color-grey">When will you wear this scent?</span>
+					<div class="response-container">
+						<div class="question-images">
+							<a href="#" class="question-img">
+								<img src="images/img-08.jpg" srcset="images/img-08-2x.jpg 2x" alt="">
+								<span class="question-text-figurecaption">
+									at work
+								</span>
+							</a>
+							<a href="#" class="question-img">
+								<img src="images/img-09.jpg" srcset="images/img-09-2x.jpg 2x" alt="">
+								<span class="question-text-figurecaption">
+									on a date
+								</span>
+							</a>
+							<a href="#" class="question-img">
+								<img src="images/img-10.jpg" srcset="images/img-10-2x.jpg 2x" alt="">
+								<span class="question-text-figurecaption">
+									brunch with friends
+								</span>
+							</a>
+							<a href="#" class="question-img">
+								<img src="images/img-11.jpg" srcset="images/img-11-2x.jpg 2x" alt="">
+								<span class="question-text-figurecaption">
+									all the time
+								</span>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="hidden-data" data-question="When will you wear this scent?">
+					<input type="checkbox" id="data-q1-yes" value="Yes">
+					<input type="checkbox" id="data-q1-no" value="No">
+				</div>
+			</div>
+			<div id="screen-5" data-screen="question-4" class="fullscreen">
+				<header class="header">
+					<img src="images/logo.png" srcset="images/logo-2x.png 2x" alt="EDITIONS PARFUMS FREDERIC MALLE">
+				</header>
+				<button class="start-over-button">Start Over</button>
+				<div class="question-container">
+					<span class="question-text fg-color-grey">Which scent family do you love most?</span>
+					<div class="response-container">
+						<div class="question-images">
+							<a href="#" class="question-img">
+								<img src="images/img-12.jpg" srcset="images/img-12-2x.jpg 2x" alt="">
+								<span class="question-text-figurecaption">
+									Berries
+								</span>
+							</a>
+							<a href="#" class="question-img">
+								<img src="images/img-13.jpg" srcset="images/img-13-2x.jpg 2x" alt="">
+								<span class="question-text-figurecaption">
+									Flowers/floral
+								</span>
+							</a>
+							<a href="#" class="question-img">
+								<img src="images/img-14.jpg" srcset="images/img-14-2x.jpg 2x" alt="">
+								<span class="question-text-figurecaption">
+									Incense/aromatic
+								</span>
+							</a>
+							<a href="#" class="question-img">
+								<img src="images/img-15.jpg" srcset="images/img-15-2x.jpg 2x" alt="">
+								<span class="question-text-figurecaption">
+									Leather
+								</span>
+							</a>
+							<a href="#" class="question-img">
+								<img src="images/img-16.jpg" srcset="images/img-16-2x.jpg 2x" alt="">
+								<span class="question-text-figurecaption">
+									Orange/Citrus
+								</span>
+							</a>
+							<a href="#" class="question-img">
+								<img src="images/img-17.jpg" srcset="images/img-17-2x.jpg 2x" alt="">
+								<span class="question-text-figurecaption">
+									Wood
+								</span>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="hidden-data" data-question="Which scent family do you love most?">
+					<input type="checkbox" id="data-q1-yes" value="Yes">
+					<input type="checkbox" id="data-q1-no" value="No">
+				</div>
+			</div> -->
+			<div id="screen-6" data-screen="question-5" class="fullscreen background-end">
+				<header class="header">
+					<img src="images/logo.png" srcset="images/logo-2x.png 2x" alt="EDITIONS PARFUMS FREDERIC MALLE">
+				</header>
+				<button class="start-over-button">Start Over</button>
+				<div class="question-container">
+					<span class="question-text fg-color-white">Share your <i>#perfectscent</i><br> on Instagram <strong>@fredericmalle</strong></span>
+				</div>
+			</div>
+		</main>
+	</div>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/sweetalert2.all.min.js"></script>
+	<script src="js/jquery.keyboard.min.js"></script>
+</body>
+</html>
