@@ -96,6 +96,16 @@
 		padding: 11px 35px 0 35px;
 	}
 
+	.header .header-holder {
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		justify-content: space-between;
+		max-width: 1210px;
+	}
+
 	/***** FULL HD SCREEN SIZE *****/
 	.fullscreen {
 		width: 1920px;
@@ -268,6 +278,75 @@
 		outline: none;
 	}
 
+	.steps {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		counter-reset: li;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.steps li:first-child {
+		margin-left: 0;
+	}
+
+	.steps li:last-child {
+		margin-right: 0;
+	}
+
+	.steps:after {
+		content: '';
+		position: absolute;
+		top: 41%;
+		-webkit-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		-o-transform: translateY(-50%);
+		transform: translateY(-50%);
+		width: 100%;
+		height: 3px;
+		background-color: #fff;
+	}
+
+	.steps li {
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		border: 2px solid #fff;
+		position: relative;
+		background-color: #000;
+		margin: 0 33px;
+		z-index: 1;
+	}
+
+	.steps li.step-active {
+		background-color: #fff;
+	}
+
+	.steps li.step-active:before {
+		color: #000;
+	}
+
+	.steps li:before {
+		content: counter(li);
+		counter-increment: li;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		-o-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+		color: #fff;
+		font-size: 30px;
+
+	}
+
 	#screen-2 .question-container {
 		padding: 231px 15px 0 15px;
 	}
@@ -407,7 +486,17 @@
 			</div>
 			<div id="screen-2" data-screen="question-2" class="fullscreen">
 				<header class="header">
-					<img src="images/logo.png" srcset="images/logo-2x.png 2x" alt="EDITIONS PARFUMS FREDERIC MALLE">
+					<div class="header-holder">
+						<img src="images/logo.png" srcset="images/logo-2x.png 2x" alt="EDITIONS PARFUMS FREDERIC MALLE">
+						<ol class="steps">
+							<li class="step-active"></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ol>
+					</div>
 				</header>
 				<button class="start-over-button">Start Over</button>
 				<div class="question-container">
@@ -433,7 +522,17 @@
 			</div>
 			<div id="screen-3" data-screen="question-3" class="fullscreen">
 				<header class="header">
-					<img src="images/logo.png" srcset="images/logo-2x.png 2x" alt="EDITIONS PARFUMS FREDERIC MALLE">
+					<div class="header-holder">
+						<img src="images/logo.png" srcset="images/logo-2x.png 2x" alt="EDITIONS PARFUMS FREDERIC MALLE">
+						<ol class="steps">
+							<li></li>
+							<li class="step-active"></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ol>
+					</div>
 				</header>
 				<button class="start-over-button">Start Over</button>
 				<div class="question-container">
@@ -474,7 +573,17 @@
 			</div>
 			<div id="screen-4" data-screen="question-4" class="fullscreen">
 				<header class="header">
-					<img src="images/logo.png" srcset="images/logo-2x.png 2x" alt="EDITIONS PARFUMS FREDERIC MALLE">
+					<div class="header-holder">
+						<img src="images/logo.png" srcset="images/logo-2x.png 2x" alt="EDITIONS PARFUMS FREDERIC MALLE">
+						<ol class="steps">
+							<li></li>
+							<li></li>
+							<li class="step-active"></li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ol>
+					</div>
 				</header>
 				<button class="start-over-button">Start Over</button>
 				<div class="question-container">
@@ -509,7 +618,17 @@
 			</div>
 			<div id="screen-5" data-screen="question-5" class="fullscreen">
 				<header class="header">
-					<img src="images/logo.png" srcset="images/logo-2x.png 2x" alt="EDITIONS PARFUMS FREDERIC MALLE">
+					<div class="header-holder">
+						<img src="images/logo.png" srcset="images/logo-2x.png 2x" alt="EDITIONS PARFUMS FREDERIC MALLE">
+						<ol class="steps">
+							<li></li>
+							<li></li>
+							<li></li>
+							<li class="step-active"></li>
+							<li></li>
+							<li></li>
+						</ol>
+					</div>
 				</header>
 				<button class="start-over-button">Start Over</button>
 				<div class="question-container">
@@ -550,7 +669,17 @@
 			</div>
 			<div id="screen-6" data-screen="question-6" class="fullscreen">
 				<header class="header">
-					<img src="images/logo.png" srcset="images/logo-2x.png 2x" alt="EDITIONS PARFUMS FREDERIC MALLE">
+					<div class="header-holder">
+						<img src="images/logo.png" srcset="images/logo-2x.png 2x" alt="EDITIONS PARFUMS FREDERIC MALLE">
+						<ol class="steps">
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li class="step-active"></li>
+							<li></li>
+						</ol>
+					</div>
 				</header>
 				<button class="start-over-button">Start Over</button>
 				<div class="question-container">
@@ -603,7 +732,17 @@
 			</div>
 			<div id="screen-7" data-screen="question-7" class="fullscreen">
 				<header class="header">
-					<img src="images/logo.png" srcset="images/logo-2x.png 2x" alt="EDITIONS PARFUMS FREDERIC MALLE">
+					<div class="header-holder">
+						<img src="images/logo.png" srcset="images/logo-2x.png 2x" alt="EDITIONS PARFUMS FREDERIC MALLE">
+						<ol class="steps">
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li class="step-active"></li>
+						</ol>
+					</div>
 				</header>
 				<button class="start-over-button">Start Over</button>
 				<div class="question-container">
@@ -667,9 +806,6 @@
 				</div>
 			</div>
 			<div id="screen-8" data-screen="question-8" class="fullscreen background-end">
-				<header class="header">
-					<img src="images/logo.png" srcset="images/logo-2x.png 2x" alt="EDITIONS PARFUMS FREDERIC MALLE">
-				</header>
 				<button class="start-over-button">Start Over</button>
 				<div class="question-container">
 					<span class="question-text fg-color-white">Share your <i>#perfectscent</i><br> on Instagram <strong>@fredericmalle</strong></span>
