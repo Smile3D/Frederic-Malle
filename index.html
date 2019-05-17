@@ -900,8 +900,6 @@
 			function emailStep() {
 				updateTimer();
 
-				let email = $('*[id*=screen-' + currentSection + ']').find('input[type=email]');
-
 				$('input[type=text]').keyboard({
 					display: {
 						'bksp': '\u2190',
@@ -944,6 +942,8 @@
 					preventPaste: true,
 					autoAccept: true
 				});
+
+				let email = $('*[id*=screen-' + currentSection + ']').find('input[type=text]');
 
 				$("button[type=submit]").on('click', function(){
 					if (validateEmail(email)) {
